@@ -1,0 +1,3 @@
+# Refund approval moves the money first and keeps the learner's progress
+
+A refund request is only marked approved after the payment provider has confirmed the money went back; if that call fails, the request stays under review. Approval ends access but never deletes course progress, so a learner who buys the course again continues where they left off. We chose this over deleting progress on approval (irreversible, and it would punish a learner whose refund was later reversed or who re-buys) and over marking approved before the money moves (the record could claim a refund that never happened).
