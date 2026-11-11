@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import type { Route } from "./+types/layout.app";
 import { Sidebar } from "~/components/sidebar";
 import { DevUI } from "~/components/dev-ui";
+import { PrototypeNotificationFeed } from "~/components/prototype-notification-feed";
 import { Toaster } from "sonner";
 import { getCurrentUserId, getDevCountry } from "~/lib/session";
 import { getCountryTierInfo, COUNTRIES } from "~/lib/ppp";
@@ -235,7 +236,10 @@ export default function AppLayout({ loaderData }: Route.ComponentProps) {
         isTeamAdmin={userIsTeamAdmin}
       />
       <main className="flex-1 overflow-y-auto">
-        <Outlet />
+        {/* PROTOTYPE: notification feed variants, remove with app/components/prototype-notification-feed.tsx */}
+        <PrototypeNotificationFeed>
+          <Outlet />
+        </PrototypeNotificationFeed>
       </main>
       <DevUI
         users={users}
